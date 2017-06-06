@@ -1,0 +1,21 @@
+chore ,weeklyFrequency,minAge,#,Random,Assigned
+feed cat,1,*,1,T,T
+scoop cat litter,1,5,1,T,T
+upstairs trash,1,*,1,T,T
+main floor trash,1,5,1,T,T
+dry dishes,5,,1,T,T
+sweep floor,7,,1,T,T
+clean table,7,,1,T,T
+feed fish,3,*,1,T,T
+put away laundry,2,*,3,F,T
+pick up rooms,2,*,3,F,T
+make beds,7,*,3,F,T
+clean out shredder,1,5,1,T,T
+fold towels,1,*,1,T,T
+water plants,1,*,1,T,T
+set dinner table,7,*,1,T,T
+vacuum downstairs,1,5,1,T,T
+vaccuum upstairs,1,5,1,T,T
+30 minutes reading,7,*,3,F,T
+weekly meal planning,1,*,1,T,T
+get mail,6,*,1,T,T
