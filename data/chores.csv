@@ -1,21 +1,21 @@
 chore,weeklyFrequency,minAge,qty,randomAssigned,Assigned,dayofWeek,TotalChores
-feed cat,1,*,1,T,T,*,1
+feed cat,1,0,1,T,T,*,1
 scoop cat litter,1,5,1,T,T,0,1
-upstairs trash,1,*,1,T,T,0,1
+upstairs trash,1,0,1,T,T,0,1
 main floor trash,1,5,1,T,T,0,1
 dry dishes,5,5,1,T,T,*,5
 sweep floor,7,4,1,T,T,*,7
 clean table,7,4,1,T,T,*,7
-feed fish,3,*,1,T,T,1;3;5,3
-put away laundry,2,*,3,F,T,*,6
-pick up rooms,2,*,3,F,T,*,6
-make beds,7,*,3,F,T,*,21
+feed fish,3,0,1,T,T,1;3;5,3
+put away laundry,2,0,3,F,T,*,6
+pick up rooms,2,0,3,F,T,*,6
+make beds,7,0,3,F,T,*,21
 clean out shredder,1,5,1,T,T,*,1
-fold towels,1,*,1,T,T,*,1
-water plants,1,*,1,T,T,*,1
-set dinner table,7,*,1,T,T,*,7
+fold towels,1,0,1,T,T,*,1
+water plants,1,0,1,T,T,*,1
+set dinner table,7,0,1,T,T,*,7
 vacuum downstairs,1,5,1,T,T,*,1
 vaccuum upstairs,1,5,1,T,T,*,1
-30 minutes reading,7,*,3,F,T,*,21
-weekly meal planning,1,*,1,T,T,0,1
-get mail,6,*,1,T,T,*,6
+30 minutes reading,7,0,3,F,T,*,21
+weekly meal planning,1,0,1,T,T,0,1
+get mail,6,0,1,T,T,*,6
