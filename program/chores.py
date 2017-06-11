@@ -15,7 +15,7 @@ chorePerHelper = sumChores/hCount
 print(choreCount)
 print(sumChores)
 print(chorePerHelper)
-
+chartDict = {}
 
 def choreAssign(row):
     dayOfChore = random.sample(range(7), k = row['weeklyFrequency'])
@@ -24,7 +24,6 @@ def choreAssign(row):
     helperGroup = helpers.query('age >= @minAge')
     helperGroup.reset_index()
     helpersCount = helperGroup['age'].count()
-    print(row['chore'])
     wchore = [[] for i in range(7)]
     if row['dayofWeek'] != '*':
         rsplit = row['dayofWeek'].split(';')
@@ -48,7 +47,21 @@ def choreAssign(row):
                 wchore[i] = [h for h in helperGroup['helper']]
     chartDict[row['chore']] = wchore
 
-    return wchore
+    return 
 
 
-print(chore.apply(choreAssign,axis=1))
+chore.apply(choreAssign,axis=1)
+helperChart = {}
+ch = []
+
+#for key in chartDict:
+    #if type(chartDict[key]) == type(list):
+    #    for j in chartDict[key]:
+    #        for name in j:
+    #            print(j.index())
+    #            print(key)
+    #            helperChart[name].update(ch[j.index()].append(key))
+    #else:
+    #     helperChart[chartDict[key]].update(ch[j.index()].append(key))
+
+#print(helperChart)
