@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import random
+import json
 
 chore = pd.read_csv('../data/chores.csv',sep=',')
 chore.sort_values('randomAssigned', ascending=True, inplace=True)
@@ -49,19 +50,33 @@ def choreAssign(row):
 
     return 
 
-
 chore.apply(choreAssign,axis=1)
 helperChart = {}
-ch = []
 
-#for key in chartDict:
-    #if type(chartDict[key]) == type(list):
-    #    for j in chartDict[key]:
-    #        for name in j:
-    #            print(j.index())
-    #            print(key)
-    #            helperChart[name].update(ch[j.index()].append(key))
-    #else:
-    #     helperChart[chartDict[key]].update(ch[j.index()].append(key))
+def createHelperChart(helperName):
+    hname = [[] for i in range(7)]
+    #charDict[key] is a list of lists
+    for key in chartDict:
+        #jCount is the day of the week
+        jCount = 0
+        for j in chartDict[key]:
+            if not j: 
+                continue
+            else:
+                if len(j) >1 :
+                    if (isinstance(j,str)):
+                        if j == helperName:
+                            hname[jCount].append(key)
+                    else:
+                        for name in j:
+                            if name == helperName:
+                                hname[jCount].append(key)
+            jCount += 1
+    return hname
 
-#print(helperChart)
+for hChore in helpers['helper']:
+    helperChart[hChore] = createHelperChart(hChore)
+
+json_string = json.dumps(helperChart)
+with open('chore.json', 'w') as outfile:
+        json.dump(json_string, outfile)
