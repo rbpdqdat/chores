@@ -78,5 +78,5 @@ for hChore in helpers['helper']:
     helperChart[hChore] = createHelperChart(hChore)
 
 json_string = json.dumps(helperChart)
-with open('chore.json', 'w') as outfile:
+with open('../output/chore.json', 'w') as outfile:
         json.dump(json_string, outfile)
