@@ -32,20 +32,20 @@ def choreAssign(row):
             helpRandom = random.randint(0,helpersCount-1)
             dChore = int(dChore)
             wchore[dChore] = helperGroup['helper'][helpRandom]  
-    if row['weeklyFrequency'] == 7:
+    elif row['weeklyFrequency'] == 7:
         for i in range(7):
             if row['randomAssigned'] == 'T':
                 helpRandom = random.randint(0,helpersCount-1)
                 wchore[i] = helperGroup['helper'][helpRandom]
             else:
                 wchore[i] = [h for h in helperGroup['helper']]
-    for d in dayOfChore:
-        print(d)
-        if row['randomAssigned'] == 'T':
-            helpRandom = random.randint(0,helpersCount-1)
-            wchore[d] = helperGroup['helper'][helpRandom]
-        else:
-            wchore[d] = [h for h in helperGroup['helper']]
+    else:
+        for d in dayOfChore:
+            if row['randomAssigned'] == 'T':
+                helpRandom = random.randint(0,helpersCount-1)
+                wchore[d] = helperGroup['helper'][helpRandom]
+            else:
+                wchore[d] = [h for h in helperGroup['helper']]
     chartDict[row['chore']] = wchore
 
     return 
@@ -61,6 +61,7 @@ def createHelperChart(helperName):
         jCount = 0
         for j in chartDict[key]:
             if not j: 
+                jCount+=1
                 continue
             else:
                 if len(j) >1 :
@@ -71,12 +72,20 @@ def createHelperChart(helperName):
                         for name in j:
                             if name == helperName:
                                 hname[jCount].append(key)
-            jCount += 1
+                jCount += 1
     return hname
 
 for hChore in helpers['helper']:
     helperChart[hChore] = createHelperChart(hChore)
 
-json_string = json.dumps(helperChart)
-with open('../output/chore.json', 'w') as outfile:
-        json.dump(json_string, outfile)
+for worker in helperChart:
+    print('<b><font size = "4"> '+worker+' Duties</font></b>')
+    for daytasks in helperChart[worker]:
+        print('<td>')
+        for task in daytasks:
+            print('<p><input id="checkBox" type="checkbox"> '+task+'</p')
+        print('</td>')
+
+#json_string = json.dumps(helperChart)
+#with open('../output/chore.json', 'w') as outfile:
+#        json.dump(json_string, outfile)
