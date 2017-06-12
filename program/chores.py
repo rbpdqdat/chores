@@ -32,20 +32,20 @@ def choreAssign(row):
             helpRandom = random.randint(0,helpersCount-1)
             dChore = int(dChore)
             wchore[dChore] = helperGroup['helper'][helpRandom]  
-    elif row['weeklyFrequency'] == 7:
+    if row['weeklyFrequency'] == 7:
         for i in range(7):
             if row['randomAssigned'] == 'T':
                 helpRandom = random.randint(0,helpersCount-1)
                 wchore[i] = helperGroup['helper'][helpRandom]
             else:
                 wchore[i] = [h for h in helperGroup['helper']]
-    else:
-        for i in dayOfChore:
-            if row['randomAssigned'] == 'T':
-                helpRandom = random.randint(0,helpersCount-1)
-                wchore[i] = helperGroup['helper'][helpRandom]
-            else:
-                wchore[i] = [h for h in helperGroup['helper']]
+    for d in dayOfChore:
+        print(d)
+        if row['randomAssigned'] == 'T':
+            helpRandom = random.randint(0,helpersCount-1)
+            wchore[d] = helperGroup['helper'][helpRandom]
+        else:
+            wchore[d] = [h for h in helperGroup['helper']]
     chartDict[row['chore']] = wchore
 
     return 
