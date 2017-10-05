@@ -140,6 +140,19 @@ for choreline in chorelines:
     # weekly frequency - day_of_week - available_helpers interaction
     # if assigned_to == '*' then 
 
+Devin.name
+
+f = open('../output/'+Devin.name+"1.html", "w")
+f.write('<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><b><font size = "4">'+
+      Devin.name + " Duties</font></b><table border=1><thead><tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead><tbody><tr>")
+for daytasks in Devin.weekchart:
+    f.write('<td>')
+    for task in daytasks:
+        if task != None:
+            f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
+    f.write('</td>')
+f.write('</tr></tbody></table></body></html>')
+f.close()
 
 print(Devin.weekchart)
 print(Lyndon.weekchart)
