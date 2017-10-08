@@ -7,8 +7,8 @@ class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = None
-        self.weekchart = np.empty([7,7],dtype=object)
-        self.day_of_ct = [0 for i in range(7)]
+        self.weekchart = np.empty([7,8],dtype=object)
+        self.day_of_ct = [0 for i in range(8)]
         self.chore = ''
         self.day_of_week = ''
     def add_chore(self,chore,day_of_week):
@@ -17,8 +17,8 @@ class Person:
         self.day_of_week = day_of_week
         self.chore = chore
         self.weekchart[[self.day_of_week],self.day_of_ct[day_of_week]] = self.chore
-        self.day_of_ct[day_of_week] += 1
         print('{} got {} as a chore on day {}'.format(self.name,self.chore,self.day_of_week))
+        self.day_of_ct[day_of_week] += 1
 
 class Adult(Person):
     '''defining Adult by inheriting attributes from Person class'''
@@ -42,7 +42,6 @@ class Chore:
         self.due = due
         self.day = day.split(';')
         self.qt = qt
-
 
 
 #helpers = pd.read_csv('../data/helpers.csv',sep=',')
@@ -71,7 +70,7 @@ def helperList(minimum_age,hlist):
     
 def workerpick(helpgroup):
     #print(helpgroup)
-    x = [random.choice(helpgroup)]
+    x = random.choice(helpgroup)
     return x
 
 #This is where a class is useful
@@ -83,25 +82,25 @@ def assignchore(work,worker,chorenumber,daylist,day_of_week):
         dayofchore = random.choice(daylist)
     else:
         dayofchore = day_of_week[chorenumber]
-    daychore = int(dayofchore)
-    print(type(dayofchore))    
+    daychore = int(dayofchore)  
     if worker == 'Devin':
         # I would like to reinput the chore into the randomization
         #scheme if one of the days is filled over the max number of chores
         if (Devin.day_of_ct[daychore]) <= 7:
+            print("Devin day_of_ct <7: "+str(Devin.day_of_ct[daychore]) +" "+work)
             Devin.add_chore(work,daychore)
     if worker == 'Lyndon':
         if (Lyndon.day_of_ct[daychore]) <= 7:
+            print("Lyndon day_of_ct <7: "+str(Lyndon.day_of_ct[daychore]) +" "+work)
             Lyndon.add_chore(work,daychore)
     if worker == 'Sam':
-        if (Lyndon.day_of_ct[daychore]) <= 7:
+        if (Sam.day_of_ct[daychore]) <= 7:
+            print("Sam day_of_ct <7: "+str(Lyndon.day_of_ct[daychore]) +" "+work)
             Sam.add_chore(work,daychore)
     if day_of_week == '*':
         daylist = daylist.remove(dayofchore)
 
     return 
-
-
 
 Devin = Child('Devin',9)
 Lyndon = Child('Lyndon',7)
@@ -140,8 +139,6 @@ for choreline in chorelines:
     # weekly frequency - day_of_week - available_helpers interaction
     # if assigned_to == '*' then 
 
-Devin.name
-
 f = open('../output/'+Devin.name+"1.html", "w")
 f.write('<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><b><font size = "4">'+
       Devin.name + " Duties</font></b><table border=1><thead><tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead><tbody><tr>")
@@ -154,9 +151,32 @@ for daytasks in Devin.weekchart:
 f.write('</tr></tbody></table></body></html>')
 f.close()
 
-print(Devin.weekchart)
-print(Lyndon.weekchart)
-print(Sam.weekchart)
+f = open('../output/'+Lyndon.name+"1.html", "w")
+f.write('<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><b><font size = "4">'+
+      Lyndon.name + " Duties</font></b><table border=1><thead><tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead><tbody><tr>")
+for daytasks in Lyndon.weekchart:
+    f.write('<td>')
+    for task in daytasks:
+        if task != None:
+            f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
+    f.write('</td>')
+f.write('</tr></tbody></table></body></html>')
+f.close()
+
+f = open('../output/'+Sam.name+"1.html", "w")
+f.write('<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><b><font size = "4">'+
+      Sam.name + " Duties</font></b><table border=1><thead><tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead><tbody><tr>")
+for daytasks in Sam.weekchart:
+    f.write('<td>')
+    for task in daytasks:
+        if task != None:
+            f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
+    f.write('</td>')
+f.write('</tr></tbody></table></body></html>')
+f.close()
+#print(Devin.weekchart)
+#print(Lyndon.weekchart)
+#print(Sam.weekchart)
 
 
 
