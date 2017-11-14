@@ -7,8 +7,8 @@ class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = None
-        self.weekchart = np.empty([7,8],dtype=object)
-        self.day_of_ct = [0 for i in range(8)]
+        self.weekchart = np.empty([7,9],dtype=object)
+        self.day_of_ct = [0 for i in range(9)]
         self.chore = ''
         self.day_of_week = ''
     def add_chore(self,chore,day_of_week):
@@ -86,15 +86,15 @@ def assignchore(work,worker,chorenumber,daylist,day_of_week):
     if worker == 'Devin':
         # I would like to reinput the chore into the randomization
         #scheme if one of the days is filled over the max number of chores
-        if (Devin.day_of_ct[daychore]) <= 7:
+        if (Devin.day_of_ct[daychore]) <= 8:
             print("Devin day_of_ct <7: "+str(Devin.day_of_ct[daychore]) +" "+work)
             Devin.add_chore(work,daychore)
     if worker == 'Lyndon':
-        if (Lyndon.day_of_ct[daychore]) <= 7:
+        if (Lyndon.day_of_ct[daychore]) <= 8:
             print("Lyndon day_of_ct <7: "+str(Lyndon.day_of_ct[daychore]) +" "+work)
             Lyndon.add_chore(work,daychore)
     if worker == 'Sam':
-        if (Sam.day_of_ct[daychore]) <= 7:
+        if (Sam.day_of_ct[daychore]) <= 8:
             print("Sam day_of_ct <7: "+str(Lyndon.day_of_ct[daychore]) +" "+work)
             Sam.add_chore(work,daychore)
     if day_of_week == '*':
