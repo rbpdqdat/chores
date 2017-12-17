@@ -138,6 +138,9 @@ for choreline in chorelines:
 
     # weekly frequency - day_of_week - available_helpers interaction
     # if assigned_to == '*' then 
+#next easy steps
+#create a write html function
+#resize image size based on the table size
 
 f = open('../output/'+Devin.name+"1.html", "w")
 f.write('<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><b><font size = "4">'+
@@ -148,7 +151,9 @@ for daytasks in Devin.weekchart:
         if task != None:
             f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
     f.write('</td>')
-f.write('</tr></tbody></table></body></html>')
+f.write('</tr></tbody></table><p>')
+imgchoice = random.randrange(1,10)
+f.write('<img left="50%" src="../data/'+str(imgchoice)+'.png" height="350" width="350"></body></html>')
 f.close()
 
 f = open('../output/'+Lyndon.name+"1.html", "w")
@@ -160,7 +165,9 @@ for daytasks in Lyndon.weekchart:
         if task != None:
             f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
     f.write('</td>')
-f.write('</tr></tbody></table></body></html>')
+f.write('</tr></tbody></table><p>')
+imgchoice = random.randrange(1,10)
+f.write('<img left="50%" src="../data/'+str(imgchoice)+'.png" height="350" width="350"></body></html>')
 f.close()
 
 f = open('../output/'+Sam.name+"1.html", "w")
@@ -172,8 +179,11 @@ for daytasks in Sam.weekchart:
         if task != None:
             f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
     f.write('</td>')
-f.write('</tr></tbody></table></body></html>')
+f.write('</tr></tbody></table><p>')
+imgchoice = random.randrange(1,10)
+f.write('<img left="50%" src="../data/'+str(imgchoice)+'.png" height="350" width="350"></body></html>')
 f.close()
+print(str(imgchoice))
 #print(Devin.weekchart)
 #print(Lyndon.weekchart)
 #print(Sam.weekchart)
