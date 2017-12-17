@@ -152,7 +152,7 @@ for daytasks in Devin.weekchart:
             f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
     f.write('</td>')
 f.write('</tr></tbody></table><p>')
-imgchoice = random.randrange(1,10)
+imgchoice = random.randrange(1,11)
 f.write('<img left="50%" src="../data/'+str(imgchoice)+'.png" height="350" width="350"></body></html>')
 f.close()
 
@@ -166,7 +166,7 @@ for daytasks in Lyndon.weekchart:
             f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
     f.write('</td>')
 f.write('</tr></tbody></table><p>')
-imgchoice = random.randrange(1,10)
+imgchoice = random.randrange(1,11)
 f.write('<img left="50%" src="../data/'+str(imgchoice)+'.png" height="350" width="350"></body></html>')
 f.close()
 
@@ -180,7 +180,7 @@ for daytasks in Sam.weekchart:
             f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
     f.write('</td>')
 f.write('</tr></tbody></table><p>')
-imgchoice = random.randrange(1,10)
+imgchoice = random.randrange(1,11)
 f.write('<img left="50%" src="../data/'+str(imgchoice)+'.png" height="350" width="350"></body></html>')
 f.close()
 print(str(imgchoice))
