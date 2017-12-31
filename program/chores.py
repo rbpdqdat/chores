@@ -86,7 +86,7 @@ def assignchore(work,worker,chorenumber,daylist,day_of_week):
     if worker == 'Devin':
         # I would like to reinput the chore into the randomization
         #scheme if one of the days is filled over the max number of chores
-        if (Devin.day_of_ct[daychore]) <= 8:
+        if (Devin.day_of_ct[daychore]) <= 9:
             print("Devin day_of_ct <7: "+str(Devin.day_of_ct[daychore]) +" "+work)
             Devin.add_chore(work,daychore)
     if worker == 'Lyndon':
@@ -187,7 +187,4 @@ print(str(imgchoice))
 #print(Devin.weekchart)
 #print(Lyndon.weekchart)
 #print(Sam.weekchart)
-
-
-
 
