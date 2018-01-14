@@ -142,6 +142,14 @@ for choreline in chorelines:
 #create a write html function
 #resize image size based on the table size
 
+#The following returns a list of random numbers from the list of numbers
+#This makies it so the numbers aren't repeated
+image_numbers = set([i for i in range(0,25)])
+group_of_items = image_numbers # {1, 2, 3, 4}               # a sequence or set will work here.
+num_to_select = 3                           # set the number to select here.
+random_items = random.sample(group_of_items, num_to_select)
+
+
 f = open('../output/'+Devin.name+"1.html", "w")
 f.write('<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><b><font size = "4">'+
       Devin.name + " Duties</font></b><table border=1><thead><tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead><tbody><tr>")
@@ -152,8 +160,8 @@ for daytasks in Devin.weekchart:
             f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
     f.write('</td>')
 f.write('</tr></tbody></table><p>')
-imgchoice = random.randrange(1,11)
-f.write('<img left="50%" src="../data/'+str(imgchoice)+'.png" height="350" width="350"></body></html>')
+#imgchoice = random.randrange(1,11)
+f.write('<img left="50%" src="../data/'+str(random_items[0])+'.png" height="350" width="350"></body></html>')
 f.close()
 
 f = open('../output/'+Lyndon.name+"1.html", "w")
@@ -166,8 +174,8 @@ for daytasks in Lyndon.weekchart:
             f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
     f.write('</td>')
 f.write('</tr></tbody></table><p>')
-imgchoice = random.randrange(1,11)
-f.write('<img left="50%" src="../data/'+str(imgchoice)+'.png" height="350" width="350"></body></html>')
+#imgchoice = random.randrange(1,11)
+f.write('<img left="50%" src="../data/'+str(random_items[1])+'.png" height="350" width="350"></body></html>')
 f.close()
 
 f = open('../output/'+Sam.name+"1.html", "w")
@@ -180,10 +188,10 @@ for daytasks in Sam.weekchart:
             f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
     f.write('</td>')
 f.write('</tr></tbody></table><p>')
-imgchoice = random.randrange(1,11)
-f.write('<img left="50%" src="../data/'+str(imgchoice)+'.png" height="350" width="350"></body></html>')
+#imgchoice = random.randrange(1,11)
+f.write('<img left="50%" src="../data/'+str(random_items[2])+'.png" height="350" width="350"></body></html>')
 f.close()
-print(str(imgchoice))
+#print(str(imgchoice))
 #print(Devin.weekchart)
 #print(Lyndon.weekchart)
 #print(Sam.weekchart)
