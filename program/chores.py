@@ -7,8 +7,8 @@ class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = None
-        self.weekchart = np.empty([7,9],dtype=object)
-        self.day_of_ct = [0 for i in range(9)]
+        self.weekchart = np.empty([7,10],dtype=object)
+        self.day_of_ct = [0 for i in range(10)]
         self.chore = ''
         self.day_of_week = ''
     def add_chore(self,chore,day_of_week):
@@ -144,7 +144,7 @@ for choreline in chorelines:
 
 #The following returns a list of random numbers from the list of numbers
 #This makies it so the numbers aren't repeated
-image_numbers = set([i for i in range(0,25)])
+image_numbers = set([i for i in range(0,26)])
 group_of_items = image_numbers # {1, 2, 3, 4}               # a sequence or set will work here.
 num_to_select = 3                           # set the number to select here.
 random_items = random.sample(group_of_items, num_to_select)
