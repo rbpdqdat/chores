@@ -5,6 +5,7 @@ h1 {
 	text-align: center;
 }
 img {
+    margin-top: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -13,14 +14,14 @@ img {
 }
 
 th {
-	background: #42f4f1;
-	border: 2px solid #999;
+	background: #84F4FF;
+	border: 2px solid #000000;
     padding: 0.5rem;
     text-align: left;
 }
 
 td {
-  border: 1px solid #999;
+  border: 1px solid #000000;
   padding: 0.5rem;
   text-align: left;
 }
