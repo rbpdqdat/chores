@@ -11,14 +11,17 @@ class Person:
         self.day_of_ct = [0 for i in range(10)]
         self.chore = ''
         self.day_of_week = ''
+        self.maxcount_day = 0
     def add_chore(self,chore,day_of_week):
         '''add_chore method in class 
            add chores to the 7 X 7 matrix'''
         self.day_of_week = day_of_week
         self.chore = chore
         self.weekchart[[self.day_of_week],self.day_of_ct[day_of_week]] = self.chore
-        print('{} got {} as a chore on day {}'.format(self.name,self.chore,self.day_of_week))
+        #print('{} got {} as a chore on day {}'.format(self.name,self.chore,self.day_of_week))
         self.day_of_ct[day_of_week] += 1
+        if self.day_of_ct[day_of_week] > self.maxcount_day:
+            self.maxcount_day = self.day_of_ct[day_of_week]
 
 class Adult(Person):
     '''defining Adult by inheriting attributes from Person class'''
@@ -102,9 +105,9 @@ def assignchore(work,worker,chorenumber,daylist,day_of_week):
 
     return 
 
-Devin = Child('Devin',9)
-Lyndon = Child('Lyndon',7)
-Sam = Child('Sam',4)
+Devin = Child('Devin',10)
+Lyndon = Child('Lyndon',8)
+Sam = Child('Sam',5)
 
 #read in chores from chore list
 for choreline in chorelines:
@@ -149,47 +152,59 @@ group_of_items = image_numbers # {1, 2, 3, 4}               # a sequence or set 
 num_to_select = 3                           # set the number to select here.
 random_items = random.sample(group_of_items, num_to_select)
 
+html_header1='<!DOCTYPE html><html><head><link rel="stylesheet" href="style.css"></head><body><b><font size = "4"><h1>'
+html_header2=' Duties</h1></font></b><table border=1><thead><tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead><tbody>'
 
-f = open('../output/'+Devin.name+"1.html", "w")
-f.write('<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><b><font size = "4">'+
-      Devin.name + " Duties</font></b><table border=1><thead><tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead><tbody><tr>")
-for daytasks in Devin.weekchart:
-    f.write('<td>')
-    for task in daytasks:
-        if task != None:
-            f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
-    f.write('</td>')
-f.write('</tr></tbody></table><p>')
+f = open('../output/'+Devin.name+'.html', "w")
+f.write(html_header1+Devin.name +html_header2)
+
+for j in range(int(Devin.maxcount_day)):
+    f.write('<tr>')
+    for i in range(0,7):
+        f.write('<td>')
+        try:
+            f.write('<p> '+Devin.weekchart[i,j]+'</p>')
+        except:
+            pass
+        f.write('</td>')
+    f.write('</tr>')
+f.write('</tbody></table><p>')
 #imgchoice = random.randrange(1,11)
-f.write('<img left="50%" src="../data/'+str(random_items[0])+'.png" height="350" width="350"></body></html>')
+f.write('<img src="../data/'+str(random_items[0])+'.png" height="350" width="350"></body></html>')
 f.close()
 
-f = open('../output/'+Lyndon.name+"1.html", "w")
-f.write('<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><b><font size = "4">'+
-      Lyndon.name + " Duties</font></b><table border=1><thead><tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead><tbody><tr>")
-for daytasks in Lyndon.weekchart:
-    f.write('<td>')
-    for task in daytasks:
-        if task != None:
-            f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
-    f.write('</td>')
+f = open('../output/'+Lyndon.name+".html", "w")
+f.write(html_header1+Lyndon.name +html_header2 )
+for j in range(int(Lyndon.maxcount_day)):
+    f.write('<tr>')
+    for i in range(0,7):
+        f.write('<td>')
+        try:
+            f.write('<p> '+Lyndon.weekchart[i,j]+'</p>')
+        except:
+            pass
+        f.write('</td>')
+    f.write('</tr>')
 f.write('</tr></tbody></table><p>')
 #imgchoice = random.randrange(1,11)
-f.write('<img left="50%" src="../data/'+str(random_items[1])+'.png" height="350" width="350"></body></html>')
+f.write('<img src="../data/'+str(random_items[1])+'.png" height="350" width="350"></body></html>')
 f.close()
 
-f = open('../output/'+Sam.name+"1.html", "w")
-f.write('<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body><b><font size = "4">'+
-      Sam.name + " Duties</font></b><table border=1><thead><tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead><tbody><tr>")
-for daytasks in Sam.weekchart:
-    f.write('<td>')
-    for task in daytasks:
-        if task != None:
-            f.write('<p><input id="checkBox" type="checkbox"> '+task+'</p>')
-    f.write('</td>')
+f = open('../output/'+Sam.name+".html", "w")
+f.write(html_header1+Sam.name + html_header2)
+for j in range(int(Sam.maxcount_day)):
+    f.write('<tr>')
+    for i in range(0,7):
+        f.write('<td>')
+        try:
+            f.write('<p> '+Sam.weekchart[i,j]+'</p>')
+        except:
+            pass
+        f.write('</td>')
+    f.write('</tr>')
 f.write('</tr></tbody></table><p>')
 #imgchoice = random.randrange(1,11)
-f.write('<img left="50%" src="../data/'+str(random_items[2])+'.png" height="350" width="350"></body></html>')
+f.write('<img src="../data/'+str(random_items[2])+'.png" height="350" width="350"></body></html>')
 f.close()
 #print(str(imgchoice))
 #print(Devin.weekchart)
