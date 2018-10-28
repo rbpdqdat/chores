@@ -13,7 +13,7 @@ class Person:
         self.day_of_week = ''
         self.maxcount_day = 0
     def add_chore(self,chore,day_of_week):
-        '''add_chore method in class 
+        '''add_chore method in class
            add chores to the 7 X 7 matrix'''
         self.day_of_week = day_of_week
         self.chore = chore
@@ -70,7 +70,7 @@ def helperList(minimum_age,hlist):
         if age >= minimum_age:
             helpernames.append(helper)
     return helpernames
-    
+
 def workerpick(helpgroup):
     #print(helpgroup)
     x = random.choice(helpgroup)
@@ -85,7 +85,7 @@ def assignchore(work,worker,chorenumber,daylist,day_of_week):
         dayofchore = random.choice(daylist)
     else:
         dayofchore = day_of_week[chorenumber]
-    daychore = int(dayofchore)  
+    daychore = int(dayofchore)
     if worker == 'Devin':
         # I would like to reinput the chore into the randomization
         #scheme if one of the days is filled over the max number of chores
@@ -103,7 +103,7 @@ def assignchore(work,worker,chorenumber,daylist,day_of_week):
     if day_of_week == '*':
         daylist = daylist.remove(dayofchore)
 
-    return 
+    return
 
 Devin = Child('Devin',10)
 Lyndon = Child('Lyndon',8)
@@ -115,7 +115,7 @@ for choreline in chorelines:
     work,weekly_freq,min_age,assigned_to,day_of_week = choreline.split(',')
     if assigned_to == None:
         pass
-    else: 
+    else:
         weekly_freq = int(weekly_freq)
         qty = weekly_freq * len(assigned_to.split(';'))
 
@@ -140,14 +140,14 @@ for choreline in chorelines:
             # the single entity word is being split by letter
 
     # weekly frequency - day_of_week - available_helpers interaction
-    # if assigned_to == '*' then 
+    # if assigned_to == '*' then
 #next easy steps
 #create a write html function
 #resize image size based on the table size
 
 #The following returns a list of random numbers from the list of numbers
 #This makies it so the numbers aren't repeated
-image_numbers = set([i for i in range(0,26)])
+image_numbers = set([i for i in range(0,5)])
 group_of_items = image_numbers # {1, 2, 3, 4}               # a sequence or set will work here.
 num_to_select = 3                           # set the number to select here.
 random_items = random.sample(group_of_items, num_to_select)
@@ -170,7 +170,7 @@ for j in range(int(Devin.maxcount_day)):
     f.write('</tr>')
 f.write('</tbody></table><p>')
 #imgchoice = random.randrange(1,11)
-f.write('<img src="../data/'+str(random_items[0])+'.png" height="350" width="350"></body></html>')
+f.write('<img src="../data/halloween/'+str(random_items[0])+'.png" height="350" width="350"></body></html>')
 f.close()
 
 f = open('../output/'+Lyndon.name+".html", "w")
@@ -187,7 +187,7 @@ for j in range(int(Lyndon.maxcount_day)):
     f.write('</tr>')
 f.write('</tr></tbody></table><p>')
 #imgchoice = random.randrange(1,11)
-f.write('<img src="../data/'+str(random_items[1])+'.png" height="350" width="350"></body></html>')
+f.write('<img src="../data/halloween/'+str(random_items[1])+'.png" height="350" width="350"></body></html>')
 f.close()
 
 f = open('../output/'+Sam.name+".html", "w")
@@ -204,10 +204,9 @@ for j in range(int(Sam.maxcount_day)):
     f.write('</tr>')
 f.write('</tr></tbody></table><p>')
 #imgchoice = random.randrange(1,11)
-f.write('<img src="../data/'+str(random_items[2])+'.png" height="350" width="350"></body></html>')
+f.write('<img src="../data/halloween/'+str(random_items[2])+'.png" height="350" width="350"></body></html>')
 f.close()
 #print(str(imgchoice))
 #print(Devin.weekchart)
 #print(Lyndon.weekchart)
 #print(Sam.weekchart)
-

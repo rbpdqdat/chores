@@ -1,0 +1,39 @@
+work,weekly_freq,min_age,assigned_to,day_of_week
+dirty laundry down,1,3,*,0
+weekly meal planning,1,3,Devin,0
+reading (20 min),4,3,Devin;Lyndon,0;2;3;4
+match socks,1,3,Devin;Lyndon;Sam,0
+put away laundry,1,3,Devin;Lyndon;Sam,0
+homework,5,6,Devin;Lyndon;Sam,0;1;2;3;4
+make beds,6,0,Devin;Lyndon;Sam,0;1;2;3;4;5
+lay out clothes,5,2,Devin;Lyndon;Sam,0;1;2;3;4
+Laurie-best effort,2,5,Lyndon,1;3
+main floor trash,1,5,None,0
+help with dishes,5,5,None,*
+clean table,4,4,None,2;3;4;5
+summer journal,1,3,None,3
+Letters & Numbers,3,3,None,2;3;4
+get mail,4,3,None,2;3;5;6
+program (15 min),3,8,None,1;2;3
+scoop cat litter,1,5,None,1
+sweep floor,4,4,None,1;2;3;4
+set dinner table,4,3,None,1;2;3;4
+vacuum main floor,1,5,None,*
+vaccuum upstairs,1,5,None,*
+feed fish,3,0,None,1;3;5
+organize books,1,3,None,*
+clean out van,1,3,None,3
+clean out Highlander,1,2,None,2
+match socks,1,2,None,0
+lay out soccer clothes,1,2,None,5
+clean out shredder,1,5,None,*
+water plants,1,3,None,*
+pull weeds,1,3,None,*
+raz kids,3,5,None,*
+go through Toys,1,2,None,4
+upstairs trash,1,3,None,0
+scouts - camping prep,2,5,None,3;4
+fence repair,1,3,None,0
+swim your best,5,3,None,1;2;3;4;5
+feed cat,1,3,Sam,0
+declutter (15 min),6,0,Sam;Devin;Lyndon,0;2;3;4;5;6
