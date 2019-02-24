@@ -4,34 +4,34 @@ weekly meal planning,1,3,*,0
 reading (20 min),4,3,Devin;Lyndon;Sam,0;2;3;5
 match socks,1,3,None,*
 put away laundry,1,3,Devin;Lyndon;Sam,2
-homework,4,6,None,0;1;2;3
+homework,4,6,Devin;Lyndon,0;1;2;3
 make beds,7,0,Devin;Lyndon;Sam,0;1;2;3;4;5;6
-lay out clothes,5,2,None,0;1;2;3;4
-Laurie-best effort,2,5,Lyndon,1;3
+lay out clothes,5,2,Devin;Lyndon;Sam,0;1;2;3;4
+Laurie-tutor,2,5,Lyndon,1;3
 main floor trash,1,5,None,0
 help with dishes,5,5,*,*
 clean table,4,4,None,2;3;4;5
 summer journal,1,3,None,3
 Letters & Numbers,3,3,Sam,2;3;4
-get mail,4,3,None,2;3;5;6
-program (15 min),5,8,None,0;1;2;5;6
-scoop cat litter,1,5,*,1
+get mail,4,3,*,2;3;5;6
+program (15 min),5,8,Devin;Lyndon,0;1;2;5;6
+scoop cat litter,1,5,*,0
 sweep floor,4,4,*,1;2;3;4
-set dinner table,4,3,Devin;Lyndon;Sam,1;2;3;5
+set dinner table,4,3,*,1;2;4;5
 vacuum main floor,1,5,*,*
-vaccuum upstairs,1,5,None,0
+clean your laundry,1,10,Devin,0
 feed fish,3,0,None,1;3;5
-organize books,1,3,None,*
+organize books,1,3,*,*
 clean out van,1,3,None,3
 clean out Highlander,1,2,None,1
 lay out soccer clothes,1,2,None,5
 clean out shredder,1,5,None,*
 water plants,1,3,None,*
 pull weeds,1,3,None,*
-pick project,1,2,Devin;Lyndon;Sam,1
+pick project,1,2,None,1
 upstairs trash,1,3,None,0
 scouts - camping prep,2,5,None,3;4
-pick up legos,1,3,None,0
-swim your best,5,3,None,1;2;3;4;5
-feed cat,1,3,*,0
-declutter bedrooms,1,0,Sam;Devin;Lyndon,0
+pick up legos,1,3,None,5
+swim your best,1,3,Devin;Lyndon,3
+feed cat,1,3,*,4
+declutter bedrooms,1,0,Devin;Lyndon;Sam,0

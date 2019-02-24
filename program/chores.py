@@ -105,9 +105,9 @@ def assignchore(work,worker,chorenumber,daylist,day_of_week):
 
     return
 
-Devin = Child('Devin',10)
-Lyndon = Child('Lyndon',8)
-Sam = Child('Sam',5)
+Devin = Child('Devin',11)
+Lyndon = Child('Lyndon',9)
+Sam = Child('Sam',6)
 
 #read in chores from chore list
 for choreline in chorelines:
@@ -147,7 +147,7 @@ for choreline in chorelines:
 
 #The following returns a list of random numbers from the list of numbers
 #This makies it so the numbers aren't repeated
-image_numbers = set([i for i in range(0,5)])
+image_numbers = set([i for i in range(34,40)])
 group_of_items = image_numbers # {1, 2, 3, 4}               # a sequence or set will work here.
 num_to_select = 3                           # set the number to select here.
 random_items = random.sample(group_of_items, num_to_select)
